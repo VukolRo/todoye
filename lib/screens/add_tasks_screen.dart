@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey/models/task_date.dart';
 
 class AddTasksScreen extends StatelessWidget {
-  String? newTask;
-  Function addNewValue;
-
-  AddTasksScreen(this.addNewValue);
+  late String newTask;
 
   @override
   Widget build(BuildContext context) {
@@ -19,45 +18,47 @@ class AddTasksScreen extends StatelessWidget {
             topLeft: Radius.circular(15.0),
           ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SizedBox(
-              height: 15.0,
-            ),
-            Text(
-              'Add task',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Colors.lightBlueAccent,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold),
-            ),
-            TextField(
-              autofocus: true,
-              textAlign: TextAlign.center,
-              onChanged: (value) {
-                newTask = value;
-              },
-            ),
-            SizedBox(
-              height: 15.0,
-            ),
-            Container(
-              color: Colors.lightBlueAccent,
-              child: TextButton(
-                onPressed: () {
-                  addNewValue(newTask);
-                  Navigator.pop(context);
+        child: Consumer<TaskDate>(builder: (context, taskList, child) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(
+                height: 15.0,
+              ),
+              Text(
+                'Add task',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.lightBlueAccent,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold),
+              ),
+              TextField(
+                autofocus: true,
+                textAlign: TextAlign.center,
+                onChanged: (value) {
+                  newTask = value;
                 },
-                child: Text(
-                  'ADD',
-                  style: TextStyle(color: Colors.white),
+              ),
+              SizedBox(
+                height: 15.0,
+              ),
+              Container(
+                color: Colors.lightBlueAccent,
+                child: TextButton(
+                  onPressed: () {
+                    taskList.addTask(newTask);
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    'ADD',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
-            )
-          ],
-        ),
+            ],
+          );
+        }),
       ),
     );
   }

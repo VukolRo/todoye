@@ -1,4 +1,6 @@
-class Task {
+import 'package:flutter/material.dart';
+
+class Task extends ChangeNotifier {
   String? name;
   bool isDone;
 
