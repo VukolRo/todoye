@@ -15,7 +15,7 @@ Tools and concepts was used to develop this App:
 https://user-images.githubusercontent.com/61047851/186886838-68451cf5-dd58-4695-821c-e974d1bc1cd1.mp4
 
 
-### ---- installation
+##### -- installation --
 To try this App you sould clone or download this repository on your computer. 
 Than open it in Android Studio. 
 Manage all dependencies and run Flutter and Dart sdks. 
