@@ -1,5 +1,19 @@
-# todoey
+# **Todoey**
+This is a simple TO-DO list App created with Flutter.
 
-A new Flutter project.
+Tools and concepts was used to develop this App:
 
-## Getting Started
+- **Provider Package** as a **State** manager
+- **Callback** functions
+- **BottomSheeet Widget (modal)**
+- **AndroidStudio** as a IDE and device Emulator
+- **OOP** as a concept of Dart PL
+- **Flutter** and **Dart** SDKs
+
+## Quik review
+
+https://user-images.githubusercontent.com/61047851/186886838-68451cf5-dd58-4695-821c-e974d1bc1cd1.mp4
+
+
+### ---- installation
+To try this App you sould clone or download this repositori on your computer. Than open it in Android Studio. Manage all dependencies and run Flutter and Dart skds.
